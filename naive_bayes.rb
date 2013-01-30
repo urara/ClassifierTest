@@ -86,7 +86,6 @@ class NaiveBayes
 
   # get a hash of the number of times a word appears in any document
   def word_count(document)
-    #words = document.gsub(/[^\w\s]/,"").split
      mecab = MeCab::Tagger.new()
      words =  ("\n" + mecab.parse(document).force_encoding("utf-8")).scan(/\n(.+)\t/u)
     d = Hash.new
